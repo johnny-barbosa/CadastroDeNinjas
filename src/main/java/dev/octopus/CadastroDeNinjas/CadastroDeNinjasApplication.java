@@ -9,5 +9,5 @@ public class CadastroDeNinjasApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CadastroDeNinjasApplication.class, args);
 	}
-//01:34:22
+//02:13:00
 }

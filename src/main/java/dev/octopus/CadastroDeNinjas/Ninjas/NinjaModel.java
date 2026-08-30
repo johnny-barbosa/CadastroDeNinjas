@@ -1,6 +1,9 @@
-package dev.octopus.CadastroDeNinjas;
+package dev.octopus.CadastroDeNinjas.Ninjas;
 
+import dev.octopus.CadastroDeNinjas.Missoes.MissoesModel;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 //Entity ele transforma uma classe em uma entidade do BD
 @Entity
@@ -10,9 +13,18 @@ public class NinjaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nome;
+
     private String email;
+
     private int idade;
+
+    //@ManyToOne - Um ninja tem uma unica missao
+    @ManyToOne
+    @JoinColumn(name = "missoes_id") //foreign key(chave estrangeira).
+    private MissoesModel missoes;
+
 
     public NinjaModel() {
     }
